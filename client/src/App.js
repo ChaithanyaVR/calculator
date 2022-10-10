@@ -60,9 +60,7 @@ const clrDisp = () => {
             <div class="calculator">
       
            {/* calculator display */}
-          <input type="text" name="equation" onChange={(e)=>{
-            setEquation(e.target.value)
-          }}  id="disp"/>
+          <input type="text" name="equation" onChange={(e)=>{setEquation(e.target.value)}}  id="disp"/>
           
 
         <div class="buttons">
