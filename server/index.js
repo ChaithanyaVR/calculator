@@ -23,6 +23,8 @@ app.get("/test",(req,res)=> {
     res.send("hi")
 })
 
+
+//Calculation Part
 app.post("/api/calculate",(req,res)=>{
     const equation = req.body.mathEquation;
     //decoding Equation
@@ -33,6 +35,8 @@ app.post("/api/calculate",(req,res)=>{
     //posting to Database
     const sqlInsert = "INSERT INTO calculationHistory (expression , result) VALUES (?,?)";
     db.query(sqlInsert,[decodedEq,result],(err,resul)=>{
+    if (err) console.log(err)
+    else 
     console.log(resul);
     
     });
@@ -41,7 +45,7 @@ app.post("/api/calculate",(req,res)=>{
 });
 
 
-   
+//Setting PORT for API
 app.listen(3001,()=>{
     console.log("running at port 3001");
 });
